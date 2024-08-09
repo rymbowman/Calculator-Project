@@ -1,0 +1,38 @@
+.calculator-body {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: auto;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.calc-buttons-container {
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    justify-content: space-evenly;
+    padding: 25px;
+}
+button {
+    width: 50px;
+    border-radius: 10px;
+}
+
+#calc-output {
+    border: 1px solid black;
+    height: 50px;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 20px;
+}
+
+.calc-actions {
+    display: grid;
+    gap: 10px;
+}
