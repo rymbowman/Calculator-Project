@@ -2,6 +2,7 @@ let operator = '';
 let currentValue = '';
 let lastValue = '';
 let equation = '';
+let solution = '';
 let calcOutput = document.querySelector('#calc-output');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         clearCalcScreen();
     })
 
+    equals.addEventListener('click', () => {
+        getSolution();
+    })
     })
 
 
@@ -56,8 +60,23 @@ document.addEventListener('DOMContentLoaded', () => {
         equation = '';
         calcOutput.textContent = equation;
     }
-    
 
+    function getSolution(){
+        lastValue = Number(lastValue);
+        currentValue = Number(currentValue);
+
+        if (operator === '+'){
+            solution = lastValue + currentValue;
+        } else if (operator === '-'){
+            solution = lastValue - currentValue;
+        } else if (operator === 'x'){
+            solution = lastValue * currentValue;
+        } else {
+            solution = lastValue / currentValue;
+        }
+        calcOutput.textContent = solution;
+    }
+    
 //Each number and operation button on the calculator
 /*const zero = document.querySelector('#zero').addEventListener('click', () => {
     numValue = 0;
