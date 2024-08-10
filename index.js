@@ -1,14 +1,62 @@
+let operator = '';
+let currentValue = '';
+let lastValue = '';
+let equation = '';
+let calcOutput = document.querySelector('#calc-output');
+
 document.addEventListener('DOMContentLoaded', () => {
     const equals = document.querySelector('#equals');
     const allClear = document.querySelector('#clear');
     let numbers = document.querySelectorAll('.number');
     let operators = document.querySelectorAll('.operator');
-    let calcOutput = document.querySelector('#calc-output');
-})
+    
+    
+    numbers.forEach((num) => num.addEventListener('click', function(e){
+        handleCurrentValue(e.target.textContent)
+        updateEquation();
+    }));
 
-    let calcEquation = '';
-    let operator = '';
+    operators.forEach((op) => op.addEventListener('click', function(e) {
+        handleOperator(e.target.textContent)
+        updateEquation();
+    }))
 
+    allClear.addEventListener('click', () => {
+        clearCalcScreen();
+    })
+
+    })
+
+
+
+    function handleCurrentValue(num){
+        if (currentValue.length < 10){
+            currentValue += num;
+            equation += num;
+        }
+    }
+
+    function handleOperator(op){
+        if (operator.length < 2){
+            operator += op;
+            lastValue = currentValue
+            currentValue = ''
+            equation += ' ' + operator + ' '; 
+        }
+    }
+
+    function updateEquation(){
+        calcOutput.textContent = equation
+    }
+
+    function clearCalcScreen(){
+        currentValue = '';
+        lastValue = '';
+        operator = '';
+        equation = '';
+        calcOutput.textContent = equation;
+    }
+    
 
 //Each number and operation button on the calculator
 /*const zero = document.querySelector('#zero').addEventListener('click', () => {
