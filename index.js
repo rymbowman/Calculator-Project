@@ -1,16 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    const equals = document.querySelector('#equals');
+    const allClear = document.querySelector('#clear');
+    let numbers = document.querySelectorAll('.number');
+    let operators = document.querySelectorAll('.operator');
+    let calcOutput = document.querySelector('#calc-output');
 })
-let numValue
-let calcEquation = [];
-let calcOutput = document.querySelector('#calc-output');
-let zero = document.querySelector('#zero').addEventListener('click', () => {
+
+    let calcEquation = '';
+    let operator = '';
+
+
+//Each number and operation button on the calculator
+/*const zero = document.querySelector('#zero').addEventListener('click', () => {
     numValue = 0;
     calcEquation.push(numValue);
     console.log(calcEquation);
     calcOutput.innerHTML = `${numValue}`
 });
-let one = document.querySelector('#one').addEventListener('click', () => {
+const one = document.querySelector('#one').addEventListener('click', () => {
     numValue = 1
     calcEquation.push(numValue);
     console.log(calcEquation);
@@ -20,7 +27,7 @@ const two = document.querySelector('#two').addEventListener('click', () => {
     numValue = 2
     calcEquation.push(numValue);
     console.log(calcEquation);
-    calcOutput.innerHTML = `${numValue}`
+    calcOutput.innerHTML = `${calcEquation}`
 });
 const three = document.querySelector('#three').addEventListener('click', () => {
     numValue = 3
@@ -63,8 +70,8 @@ const nine = document.querySelector('#nine').addEventListener('click', () => {
     calcEquation.push(numValue);
     console.log(calcEquation);
     calcOutput.innerHTML = `${numValue}`
-});
-const add = document.querySelector('#add').addEventListener('click', () => {
+});*/
+/*const add = document.querySelector('#add').addEventListener('click', () => {
     
 });
 const subtract = document.querySelector('#subtract').addEventListener('click', () => {
@@ -75,12 +82,4 @@ const multiply = document.querySelector('#multiply').addEventListener('click', (
 });
 const divide = document.querySelector('#divide').addEventListener('click', () => {
     
-});
-const equals = document.querySelector('#equals').addEventListener('click', () => {
-    
-    
-});
-const allClear = document.querySelector('#clear').addEventListener('click', () => {
-    calcEquation = [];
-    calcOutput.innerHTML = "";
-});
+});*/
